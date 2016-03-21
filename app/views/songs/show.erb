@@ -1,0 +1,15 @@
+<p><%= @song.title %></p>
+<p>by <%= @song.author %></p>
+<p>url: <%= @song.url %></p>
+<p>created at: <%= @song.created_at %></p>
+
+<hr/>
+
+<h2>Other songs added by the same author</h2>
+<ul>
+  <% @songs.each do |song| %>
+    <li><a href="/songs/<%= song.id %>"><%= song.title %></a></li>
+  <% end %>
+</ul>
+
+<p><a href="/songs">Back to Music Wall</a></p>

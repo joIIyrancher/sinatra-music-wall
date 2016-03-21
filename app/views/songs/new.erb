@@ -1,0 +1,41 @@
+<br/>
+<h2>Create a new song</h2>
+
+<% if @song && @song.errors.any? %>
+
+  <div>
+    <strong>Some issues with your song entry, please fix them:</strong>
+
+    <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
+  </div>
+
+<% end %>
+
+
+<form action='/songs', method='post'>
+
+  <div>
+    <label>Title:   </label>
+    <input text="text" name="title" value="<%= @song.title %>">
+  </div>
+
+  <div>
+    <label>Author:<label>
+    <input text="text" name="author" value="<%= @song.author %>">
+  </div>
+
+  <div>
+    <label>URL:   </label>
+    <input text="text" name="url" value="<%= @song.url %>">
+  </div>
+
+  <div>
+    <input type="submit" name="Submit">
+  </div>
+
+</form>
