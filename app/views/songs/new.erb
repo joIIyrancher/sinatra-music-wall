@@ -1,41 +1,46 @@
-<br/>
-<h2>Create a new song</h2>
-
 <% if @song && @song.errors.any? %>
 
-  <div>
-    <strong>Some issues with your song entry, please fix them:</strong>
+    <div>
+        <strong>Some issues with your song entry, please fix them:</strong>
 
-    <ul>
-      <% @song.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+        <ul>
+            <% @song.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
 
-  </div>
+    </div>
 
 <% end %>
 
+<div class="container">
 
-<form action='/songs', method='post'>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Song</h1>
+        </div>
+    </div>
 
-  <div>
-    <label>Title:   </label>
-    <input text="text" name="title" value="<%= @song.title %>">
-  </div>
+    <form action='/songs', method='post'>
 
-  <div>
-    <label>Author:<label>
-    <input text="text" name="author" value="<%= @song.author %>">
-  </div>
+        <div>
+            <label>Title:</label>
+            <input type="text" name="title" value="<%= @song.title %>">
+        </div>
 
-  <div>
-    <label>URL:   </label>
-    <input text="text" name="url" value="<%= @song.url %>">
-  </div>
+        <div>
+            <label>Author:</label>
+            <input type="text" name="author" value="<%= @song.author %>">
+        </div>
 
-  <div>
-    <input type="submit" name="Submit">
-  </div>
+        <div>
+            <label>URL:</label>
+            <input type="text" name="url" value="<%= @song.url %>">
+        </div>
 
-</form>
+        <div>
+            <input type="submit" name="Submit">
+        </div>
+
+    </form>
+</div>

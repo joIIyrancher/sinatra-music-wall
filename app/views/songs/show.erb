@@ -1,15 +1,31 @@
-<p><%= @song.title %></p>
-<p>by <%= @song.author %></p>
-<p>url: <%= @song.url %></p>
-<p>created at: <%= @song.created_at %></p>
+<!-- Page Content -->
+<div class="container">
 
-<hr/>
+    <!-- Page Header -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Music Wall
+                <small>Brought to you by Johnny Labs</small>
+            </h1>
+        </div>
+    </div>
 
-<h2>Other songs added by the same author</h2>
-<ul>
-  <% @songs.each do |song| %>
-    <li><a href="/songs/<%= song.id %>"><%= song.title %></a></li>
-  <% end %>
-</ul>
+    <p><%= @song.title %></p>
+    <p>by <%= @song.author %></p>
+    <p>url: <%= @song.url %></p>
+    <p>created at: <%= @song.created_at %></p>
 
-<p><a href="/songs">Back to Music Wall</a></p>
+    <hr/>
+
+    <h2>Other songs added by the same author</h2>
+    <ul>
+      <% @songs.each do |song| %>
+        <li><a href="/songs/<%= song.id %>"><%= song.title %></a></li>
+      <% end %>
+    </ul>
+
+    <p><a href="/songs">Back to Music Wall</a></p>
+
+
+
+</div>
